@@ -1,0 +1,101 @@
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   
+    <LinearLayout
+        android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:background="@drawable/container_dropshadow">
+        
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:src="@drawable/piikplaceholder"
+		android:adjustViewBounds="true" />
+	
+	
+	<LinearLayout
+	    android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="8dp">
+	
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="Ravintola Bar Piano 1"
+			style="@android:style/TextAppearance.Large" />
+		
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="12 minutes ago"
+			style="@style/PiikTextAppearance.Micro" />
+	
+	</LinearLayout>
+	
+	</LinearLayout>
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/container_dropshadow"
+        android:orientation="vertical"
+        android:padding="8dp">
+	      
+          <TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Karhusuontie 67"
+				android:textStyle="bold" />
+          
+          <TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="00780 Helsinki"
+				android:textStyle="bold" />
+          
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="0.2km"
+				style="@style/PiikTextAppearance.Micro" />
+               
+	</LinearLayout>
+	
+    <RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="16dp">
+	
+        <ImageView
+            android:id="@+id/previous_piik_btn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_action_previous_item"
+			android:adjustViewBounds="true"
+			android:background="@drawable/container_circle"
+			android:padding="24dp"
+			android:layout_alignParentLeft="true" />
+        
+        <ImageView
+            android:id="@+id/next_piik_btn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_action_next_item"
+			android:adjustViewBounds="true"
+			android:background="@drawable/container_circle"
+			android:padding="24dp"
+			android:layout_alignParentRight="true" />
+        		
+	</RelativeLayout>
+	
+    
+    
+    
+</LinearLayout>
