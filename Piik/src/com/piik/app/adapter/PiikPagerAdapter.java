@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.piik.app.fragment.PiikFragment_;
+import com.piik.app.fragment.PiikFragment;
 import com.piik.app.model.PlacesList;
 
 public class PiikPagerAdapter extends FragmentStatePagerAdapter {
@@ -18,7 +18,7 @@ public class PiikPagerAdapter extends FragmentStatePagerAdapter {
 
 	@Override
 	public Fragment getItem(int pos) {
-		return new PiikFragment_();
+		return PiikFragment.newFragment(places.get(pos));
 	}
 
 	@Override

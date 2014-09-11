@@ -30,19 +30,8 @@ public class LocationService implements LocationListener {
 	
 	public void getLocation(LocationResultReceiver receiver) {
 		this.locationResultReceiver = receiver;
-		
-		Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-		if(location == null){
-			location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-		}
-		
-		if(location == null){
-			locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
-			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
-		}
-		else {
-			locationResultReceiver.gotLocation(location);
-		}
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
 	}
 	
 	public interface LocationResultReceiver {

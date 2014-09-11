@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import com.piik.app.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -63,21 +64,9 @@ public final class PiikFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        {
-            View view = hasViews.findViewById(com.piik.app.R.id.next_piik_btn);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        PiikFragment_.this.nextPiikBtnClicked();
-                    }
-
-                }
-                );
-            }
-        }
+        name = ((TextView) hasViews.findViewById(com.piik.app.R.id.name));
+        distance = ((TextView) hasViews.findViewById(com.piik.app.R.id.distance));
+        address = ((TextView) hasViews.findViewById(com.piik.app.R.id.address));
         {
             View view = hasViews.findViewById(com.piik.app.R.id.previous_piik_btn);
             if (view!= null) {
@@ -93,6 +82,22 @@ public final class PiikFragment_
                 );
             }
         }
+        {
+            View view = hasViews.findViewById(com.piik.app.R.id.next_piik_btn);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        PiikFragment_.this.nextPiikBtnClicked();
+                    }
+
+                }
+                );
+            }
+        }
+        initView();
     }
 
     public static class FragmentBuilder_ {

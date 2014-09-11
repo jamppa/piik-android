@@ -26,48 +26,29 @@
 		android:padding="8dp">
 	
 		<TextView
+		    android:id="@+id/name"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:text="Ravintola Bar Piano 1"
 			style="@android:style/TextAppearance.Large" />
 		
-		<TextView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="12 minutes ago"
-			style="@style/PiikTextAppearance.Micro" />
-	
-	</LinearLayout>
-	
-	</LinearLayout>
-	
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/container_dropshadow"
-        android:orientation="vertical"
-        android:padding="8dp">
-	      
-          <TextView
+		 <TextView
+              	android:id="@+id/address"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:text="Karhusuontie 67"
 				android:textStyle="bold" />
-          
-          <TextView
+		 
+		 
+		  <TextView
+		      	android:id="@+id/distance"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:text="00780 Helsinki"
-				android:textStyle="bold" />
-          
-			<TextView
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:text="0.2km"
 				style="@style/PiikTextAppearance.Micro" />
-               
+		
 	</LinearLayout>
 	
+	</LinearLayout>
+	
+    
     <RelativeLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -80,7 +61,7 @@
 			android:src="@drawable/ic_action_previous_item"
 			android:adjustViewBounds="true"
 			android:background="@drawable/container_circle"
-			android:padding="24dp"
+			android:padding="28dp"
 			android:layout_alignParentLeft="true" />
         
         <ImageView
@@ -90,7 +71,7 @@
 			android:src="@drawable/ic_action_next_item"
 			android:adjustViewBounds="true"
 			android:background="@drawable/container_circle"
-			android:padding="24dp"
+			android:padding="28dp"
 			android:layout_alignParentRight="true" />
         		
 	</RelativeLayout>
