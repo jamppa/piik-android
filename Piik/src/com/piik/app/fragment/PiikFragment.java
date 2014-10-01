@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.piik.app.R;
 import com.piik.app.fragment.model.PiikFragmentModel;
@@ -62,6 +63,11 @@ public class PiikFragment extends Fragment {
 	@Click(R.id.previous_piik_btn)
 	public void previousPiikBtnClicked() {
 		notifyListenerOnPreviousPiikButtonClicked();
+	}
+	
+	@Click(R.id.place_hotness)
+	public void placeHotnessClicked() {
+		Toast.makeText(getActivity(), piikFragmentModel.hotnessText(), Toast.LENGTH_SHORT).show();
 	}
 	
 	private void notifyListenerOnPreviousPiikButtonClicked() {

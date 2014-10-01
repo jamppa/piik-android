@@ -13,10 +13,18 @@ public class PiikFragmentModel {
 
 	private final Bundle bundle;
 	private final Map<String, Integer> hotnessResources = new HashMap<String, Integer>();
+	private final Map<String, String> hotnessTexts = new HashMap<String, String>();
 	
 	public PiikFragmentModel(Bundle placeBundle) {
 		this.bundle = placeBundle;
 		setupHotnessResources();
+		setupHotnessTexts();
+	}
+
+	private void setupHotnessTexts() {
+		hotnessTexts.put("not", "This place is cold as balls :/");
+		hotnessTexts.put("semi", "There could be something going on here...");
+		hotnessTexts.put("hot", "This place is hot as hell!");
 	}
 
 	private void setupHotnessResources() {
@@ -43,6 +51,10 @@ public class PiikFragmentModel {
 	
 	public int hotnessResource() {
 		return hotnessResources.get(bundle.getString("hotness"));
+	}
+	
+	public String hotnessText() {
+		return hotnessTexts.get(bundle.getString("hotness"));
 	}
 	
 }
