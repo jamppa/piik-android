@@ -13,12 +13,12 @@
 		android:background="@drawable/container_dropshadow">
         
 	<ImageView
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:src="@drawable/piikplaceholder"
-		android:adjustViewBounds="true" />
-	
-	
+	    android:id="@+id/photo"
+	    android:layout_width="match_parent"
+	    android:layout_height="280dp"
+	    android:adjustViewBounds="true"
+	    android:scaleType="centerCrop" />
+
 	<LinearLayout
 	    android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
     <RelativeLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:padding="16dp">
+		android:padding="8dp">
 	
         <ImageView
             android:id="@+id/previous_piik_btn"
@@ -63,6 +63,14 @@
 			android:background="@drawable/container_circle"
 			android:padding="28dp"
 			android:layout_alignParentLeft="true" />
+        
+        <ImageView
+
+			android:adjustViewBounds="true"
+			android:background="@drawable/container_circle"
+			android:layout_centerHorizontal="true"
+			android:layout_width="48dp"
+			android:layout_height="48dp" />
         
         <ImageView
             android:id="@+id/next_piik_btn"
@@ -76,7 +84,5 @@
         		
 	</RelativeLayout>
 	
-    
-    
-    
+     
 </LinearLayout>

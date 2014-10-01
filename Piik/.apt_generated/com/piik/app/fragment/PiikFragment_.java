@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.piik.app.R.layout;
 import org.androidannotations.api.view.HasViews;
@@ -64,9 +65,10 @@ public final class PiikFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        name = ((TextView) hasViews.findViewById(com.piik.app.R.id.name));
         distance = ((TextView) hasViews.findViewById(com.piik.app.R.id.distance));
         address = ((TextView) hasViews.findViewById(com.piik.app.R.id.address));
+        photo = ((ImageView) hasViews.findViewById(com.piik.app.R.id.photo));
+        name = ((TextView) hasViews.findViewById(com.piik.app.R.id.name));
         {
             View view = hasViews.findViewById(com.piik.app.R.id.previous_piik_btn);
             if (view!= null) {

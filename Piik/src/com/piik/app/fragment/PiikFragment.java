@@ -7,16 +7,19 @@ import org.androidannotations.annotations.ViewById;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.piik.app.R;
-import com.piik.app.model.Location;
+import com.piik.app.fragment.model.PiikFragmentModel;
 import com.piik.app.model.Place;
+import com.squareup.picasso.Picasso;
 
 @EFragment(R.layout.fragment_piik)
 public class PiikFragment extends Fragment {
 
 	PiikListener piikListener;
+	PiikFragmentModel piikFragmentModel;
 	
 	@ViewById(R.id.name)
 	TextView name;
@@ -26,6 +29,9 @@ public class PiikFragment extends Fragment {
 	
 	@ViewById(R.id.distance)
 	TextView distance;
+	
+	@ViewById(R.id.photo)
+	ImageView photo;
 		
 	@Override
 	public void onAttach(Activity activity) {
@@ -37,9 +43,11 @@ public class PiikFragment extends Fragment {
 	
 	@AfterViews
 	public void initView() {
-		name.setText(getArguments().getString("name"));
-		address.setText(((Location)getArguments().getSerializable("location")).address);
-		distance.setText(((Location)getArguments().getSerializable("location")).distance + "m");
+		piikFragmentModel = new PiikFragmentModel(getArguments());
+		name.setText(piikFragmentModel.placeName());
+		address.setText(piikFragmentModel.placeAddress());
+		distance.setText(piikFragmentModel.placeDistance());
+		Picasso.with(getActivity()).load(piikFragmentModel.placePhotoUrl()).into(photo);
 	}
 	
 	@Click(R.id.next_piik_btn)
