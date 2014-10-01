@@ -32,6 +32,9 @@ public class PiikFragment extends Fragment {
 	
 	@ViewById(R.id.photo)
 	ImageView photo;
+	
+	@ViewById(R.id.place_hotness)
+	ImageView hotness;
 		
 	@Override
 	public void onAttach(Activity activity) {
@@ -47,6 +50,7 @@ public class PiikFragment extends Fragment {
 		name.setText(piikFragmentModel.placeName());
 		address.setText(piikFragmentModel.placeAddress());
 		distance.setText(piikFragmentModel.placeDistance());
+		hotness.setBackgroundResource(piikFragmentModel.hotnessResource());
 		Picasso.with(getActivity()).load(piikFragmentModel.placePhotoUrl()).into(photo);
 	}
 	

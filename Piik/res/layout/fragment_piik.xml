@@ -65,9 +65,8 @@
 			android:layout_alignParentLeft="true" />
         
         <ImageView
-
+			android:id="@+id/place_hotness"
 			android:adjustViewBounds="true"
-			android:background="@drawable/container_circle"
 			android:layout_centerHorizontal="true"
 			android:layout_width="48dp"
 			android:layout_height="48dp" />

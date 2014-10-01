@@ -65,25 +65,11 @@ public final class PiikFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        distance = ((TextView) hasViews.findViewById(com.piik.app.R.id.distance));
         address = ((TextView) hasViews.findViewById(com.piik.app.R.id.address));
+        distance = ((TextView) hasViews.findViewById(com.piik.app.R.id.distance));
         photo = ((ImageView) hasViews.findViewById(com.piik.app.R.id.photo));
         name = ((TextView) hasViews.findViewById(com.piik.app.R.id.name));
-        {
-            View view = hasViews.findViewById(com.piik.app.R.id.previous_piik_btn);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        PiikFragment_.this.previousPiikBtnClicked();
-                    }
-
-                }
-                );
-            }
-        }
+        hotness = ((ImageView) hasViews.findViewById(com.piik.app.R.id.place_hotness));
         {
             View view = hasViews.findViewById(com.piik.app.R.id.next_piik_btn);
             if (view!= null) {
@@ -93,6 +79,21 @@ public final class PiikFragment_
                     @Override
                     public void onClick(View view) {
                         PiikFragment_.this.nextPiikBtnClicked();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(com.piik.app.R.id.previous_piik_btn);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        PiikFragment_.this.previousPiikBtnClicked();
                     }
 
                 }
