@@ -37,9 +37,9 @@ public final class SplashActivity_
     }
 
     private void init_(Bundle savedInstanceState) {
-        placesService = PlacesService_.getInstance_(this);
-        activityLauncher = ActivityLauncher_.getInstance_(this);
         locationService = LocationService_.getInstance_(this);
+        activityLauncher = ActivityLauncher_.getInstance_(this);
+        placesService = PlacesService_.getInstance_(this);
         OnViewChangedNotifier.registerOnViewChangedListener(this);
     }
 

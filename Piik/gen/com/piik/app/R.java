@@ -35,14 +35,15 @@ public final class R {
         public static final int piikplaceholder=0x7f02000b;
     }
     public static final class id {
-        public static final int address=0x7f090003;
-        public static final int distance=0x7f090004;
-        public static final int name=0x7f090002;
-        public static final int next_piik_btn=0x7f090007;
+        public static final int address=0x7f090004;
+        public static final int distance=0x7f090005;
+        public static final int name=0x7f090003;
+        public static final int next_piik_btn=0x7f090008;
         public static final int pager=0x7f090000;
-        public static final int photo=0x7f090001;
-        public static final int place_hotness=0x7f090006;
-        public static final int previous_piik_btn=0x7f090005;
+        public static final int photo=0x7f090002;
+        public static final int photo_container=0x7f090001;
+        public static final int place_hotness=0x7f090007;
+        public static final int previous_piik_btn=0x7f090006;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

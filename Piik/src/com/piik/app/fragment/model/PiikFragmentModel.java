@@ -4,19 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.piik.app.R;
-import com.piik.app.model.Location;
-import com.piik.app.model.Photo;
-
-import android.os.Bundle;
+import com.piik.app.model.Place;
 
 public class PiikFragmentModel {
 
-	private final Bundle bundle;
+	private final Place place;
 	private final Map<String, Integer> hotnessResources = new HashMap<String, Integer>();
 	private final Map<String, String> hotnessTexts = new HashMap<String, String>();
 	
-	public PiikFragmentModel(Bundle placeBundle) {
-		this.bundle = placeBundle;
+	public PiikFragmentModel(Place place) {
+		this.place = place;
 		setupHotnessResources();
 		setupHotnessTexts();
 	}
@@ -32,29 +29,33 @@ public class PiikFragmentModel {
 		hotnessResources.put("semi", R.drawable.container_circle_semi_hot);
 		hotnessResources.put("hot", R.drawable.container_circle_hot);
 	}
+	
+	public Place place() {
+		return place;
+	}
 
 	public String placeName() {
-		return bundle.getString("name");
+		return place.name;
 	}
 	
 	public String placeAddress() {
-		return ((Location)bundle.getSerializable("location")).address;
+		return place.location.address;
 	}
 	
 	public String placeDistance() {
-		return ((Location)bundle.getSerializable("location")).distance + " meters";
+		return place.location.distance + " meters";
 	}
 	
 	public String placePhotoUrl() {
-		return ((Photo)bundle.getSerializable("photo")).fullUrl;
+		return place.photo.fullUrl;
 	}
 	
 	public int hotnessResource() {
-		return hotnessResources.get(bundle.getString("hotness"));
+		return hotnessResources.get(place.hotness);
 	}
 	
 	public String hotnessText() {
-		return hotnessTexts.get(bundle.getString("hotness"));
+		return hotnessTexts.get(place.hotness);
 	}
 	
 }

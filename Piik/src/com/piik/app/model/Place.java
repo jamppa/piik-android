@@ -1,8 +1,14 @@
 package com.piik.app.model;
 
+import java.io.Serializable;
+import java.util.Locale;
+
+import android.net.Uri;
 import android.os.Bundle;
 
-public class Place {
+public class Place implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	public String id;
 	public String name;
@@ -12,12 +18,13 @@ public class Place {
 	
 	public Bundle asBundle() {
 		Bundle b = new Bundle();
-		b.putString("id", id);
-		b.putString("name", name);
-		b.putSerializable("location", location);
-		b.putSerializable("photo", photo);
-		b.putSerializable("hotness", hotness);
+		b.putSerializable("place", this);
 		return b;
+	}
+
+	public Uri asMapUri() {
+		String uri = String.format(Locale.ENGLISH,"geo:%f,%f?q=%f,%f (%s)", location.lat, location.lng, location.lat, location.lng, name);
+		return Uri.parse(uri);
 	}
 
 }

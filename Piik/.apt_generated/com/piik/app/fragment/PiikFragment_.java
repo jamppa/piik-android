@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.piik.app.ActivityLauncher_;
 import com.piik.app.R.layout;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -51,6 +52,7 @@ public final class PiikFragment_
 
     private void init_(Bundle savedInstanceState) {
         OnViewChangedNotifier.registerOnViewChangedListener(this);
+        activityLauncher = ActivityLauncher_.getInstance_(getActivity());
     }
 
     @Override
@@ -65,11 +67,11 @@ public final class PiikFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        distance = ((TextView) hasViews.findViewById(com.piik.app.R.id.distance));
-        address = ((TextView) hasViews.findViewById(com.piik.app.R.id.address));
         name = ((TextView) hasViews.findViewById(com.piik.app.R.id.name));
-        photo = ((ImageView) hasViews.findViewById(com.piik.app.R.id.photo));
+        address = ((TextView) hasViews.findViewById(com.piik.app.R.id.address));
         hotness = ((ImageView) hasViews.findViewById(com.piik.app.R.id.place_hotness));
+        distance = ((TextView) hasViews.findViewById(com.piik.app.R.id.distance));
+        photo = ((ImageView) hasViews.findViewById(com.piik.app.R.id.photo));
         {
             View view = hasViews.findViewById(com.piik.app.R.id.next_piik_btn);
             if (view!= null) {
@@ -79,6 +81,21 @@ public final class PiikFragment_
                     @Override
                     public void onClick(View view) {
                         PiikFragment_.this.nextPiikBtnClicked();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = hasViews.findViewById(com.piik.app.R.id.place_hotness);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        PiikFragment_.this.placeHotnessClicked();
                     }
 
                 }
@@ -101,14 +118,14 @@ public final class PiikFragment_
             }
         }
         {
-            View view = hasViews.findViewById(com.piik.app.R.id.place_hotness);
+            View view = hasViews.findViewById(com.piik.app.R.id.photo_container);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
                     public void onClick(View view) {
-                        PiikFragment_.this.placeHotnessClicked();
+                        PiikFragment_.this.photoContainerClicked();
                     }
 
                 }

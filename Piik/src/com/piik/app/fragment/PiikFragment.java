@@ -1,6 +1,7 @@
 package com.piik.app.fragment;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.piik.app.ActivityLauncher;
 import com.piik.app.R;
 import com.piik.app.fragment.model.PiikFragmentModel;
 import com.piik.app.model.Place;
@@ -21,6 +23,9 @@ public class PiikFragment extends Fragment {
 
 	PiikListener piikListener;
 	PiikFragmentModel piikFragmentModel;
+	
+	@Bean
+	ActivityLauncher activityLauncher;
 	
 	@ViewById(R.id.name)
 	TextView name;
@@ -47,7 +52,7 @@ public class PiikFragment extends Fragment {
 	
 	@AfterViews
 	public void initView() {
-		piikFragmentModel = new PiikFragmentModel(getArguments());
+		piikFragmentModel = new PiikFragmentModel((Place)getArguments().getSerializable("place"));
 		name.setText(piikFragmentModel.placeName());
 		address.setText(piikFragmentModel.placeAddress());
 		distance.setText(piikFragmentModel.placeDistance());
@@ -68,6 +73,11 @@ public class PiikFragment extends Fragment {
 	@Click(R.id.place_hotness)
 	public void placeHotnessClicked() {
 		Toast.makeText(getActivity(), piikFragmentModel.hotnessText(), Toast.LENGTH_SHORT).show();
+	}
+	
+	@Click(R.id.photo_container)
+	public void photoContainerClicked() {
+		activityLauncher.launchMap(getActivity(), piikFragmentModel.place());
 	}
 	
 	private void notifyListenerOnPreviousPiikButtonClicked() {
